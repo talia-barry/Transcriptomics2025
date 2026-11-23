@@ -1,0 +1,6 @@
+module_number,module_color,n_genes,strongest_trait,r,p,top_hub_gene,top_hub_kME
+29,saddlebrown,217,TE,-0.571,0.0208,111100071,0.894
+27,white,230,TE,0.565,0.0225,111106827,0.91
+19,lightyellow,314,TE,-0.541,0.0303,111115377,0.951
+13,salmon,514,TC,-0.539,0.0313,111109541,0.972
+12,tan,618,TE,0.511,0.043,111122026,0.951

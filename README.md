@@ -55,7 +55,8 @@ Outputs are written to `results/` (created automatically).
 2. Place the input files in `data/` as described in [`data/README.md`](data/README.md).
 3. Run the scripts in numbered order.
    `04b` was run on the Rutgers Amarel cluster with SLURM (`sbatch 04_WGCNA/04b_run_WGCNA_amarel.sh`);
-   copy its outputs to `results/04_WGCNA/WGCNA3/` before running `04c` and `04d`.
+   Its outputs (final signed network, 26,172 genes) are included in `results/04_WGCNA/WGCNA3/`,
+   so `04c` and `04d` can be run without re-running the network.
 
 ## Software
 

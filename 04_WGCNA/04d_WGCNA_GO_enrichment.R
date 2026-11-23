@@ -2,11 +2,11 @@
 # 04d_WGCNA_GO_enrichment.R
 # Purpose: GO enrichment (clusterProfiler) of significant WGCNA modules
 # Input:   results/04_WGCNA/WGCNA3/
-# Output:  results/04_WGCNA/GO_enrichment_signed/
+# Output:  results/04_WGCNA/WGCNA3/Go_enrichment_signed/
 # Genome: NCBI C. virginica 2017 assembly (C_virginica-3.0); read mapping + counts by Novogene
 # Run from the repository root (open Transcriptomics2025.Rproj).
 # ===================================================================
-dir.create("results/04_WGCNA/GO_enrichment_signed", recursive = TRUE, showWarnings = FALSE)
+dir.create("results/04_WGCNA/WGCNA3/Go_enrichment_signed", recursive = TRUE, showWarnings = FALSE)
 
 ##############################################################
 # GO enrichment for WGCNA significant modules for SIGNED network
@@ -58,7 +58,7 @@ modules <- sort(unique(combined$module_number))
 
 background_genes <- my_ids   # universe = ALL genes tested in WGCNA, not just significant ones
 
-go_dir <- "results/04_WGCNA/GO_enrichment_signed"
+go_dir <- "results/04_WGCNA/WGCNA3/Go_enrichment_signed"
 if (!dir.exists(go_dir)) dir.create(go_dir)
 
 go_results <- list()
