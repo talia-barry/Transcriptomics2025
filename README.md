@@ -32,6 +32,7 @@ Scripts are numbered in the order they should be run.
 
 | Folder | Script | What it does |
 |---|---|---|
+| `00_phenotype` | `00a_shell_strength_ANCOVA.R` | Shell strength ANCOVA (Table 1) and strength/dry-weight barplot (Figure 4) |
 | `01_QC_PCA` | `01a_QC_table.R` | Sequencing QC summary table |
 | | `01b_PCA.R` | PCA of samples |
 | `02_DEGs` | `02a_interaction_term_DESeq2.R` | DESeq2 interaction model (long-term × short-term) |

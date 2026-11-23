@@ -18,10 +18,17 @@ The script skips the first (title) line and expects these columns:
 `Gene_ID`, `log2FoldChange`, `pvalue`, `padj`, `significant(LvsS)`,
 `NCBI annotation`, `Blast swiss prot`, `Potentially shell related`.
 
+`phenotype/shell_strength_5month_2.5mm.csv` holds the shell measurements for the
+180 oysters (5 months old, 2.5 mm start size; 90 control, 90 predator-treated)
+from which the transcriptomics oysters were drawn. It is the subset of the
+Chapter 3 master data sheet used for Table 1 and Figure 4.
+
 Layout:
 
 ```
 data/
+├── phenotype/
+│   └── shell_strength_5month_2.5mm.csv      # shell strength, size and dry weight (Table 1, Figure 4)
 ├── novogene/
 │   ├── gene_count_novogene_2025.txt          # raw read counts per gene (Novogene)
 │   ├── MasterFile_novogene_DEGs_2025.xls     # counts, FPKM and DESeq2 results for all comparisons (Novogene)
