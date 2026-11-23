@@ -1,7 +1,14 @@
 # Input data
 
-Data files are not stored in this repository. Place them here with the
-following layout before running the scripts:
+Novogene files below are included, trimmed to the 16 samples in this study
+(TC, TE, UC, UE). Columns for unrelated samples sequenced in the same batch
+were removed; all values for the 16 samples are unchanged.
+
+The Zeng & Guo (2022) DEG table is **not** included. Download it from the
+supplementary material of that paper [add citation/link] and save it as
+`data/Guo2022/DEGs_Zeng_Guo_2022.txt`.
+
+Layout:
 
 ```
 data/
@@ -18,7 +25,7 @@ data/
 │       ├── TEvsUE/  gsea_report_for_TEvsUE_TE.tsv, gsea_report_for_TEvsUE_UE.tsv
 │       └── UEvsUC/  gsea_report_for_UEvsUC_UE.tsv, gsea_report_for_UEvsUC_UC.tsv
 └── Guo2022/
-    └── DEGs_Zeng_Guo_2022.txt                # DEG table from Zeng & Guo (2022)
+    └── DEGs_Zeng_Guo_2022.txt                # NOT included - see above
 ```
 
 Raw sequencing reads: NCBI SRA BioProject [ACCESSION – add when available].

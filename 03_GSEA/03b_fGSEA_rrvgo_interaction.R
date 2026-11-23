@@ -37,14 +37,15 @@ print(query_result)
 # but confirm from the printed list above in case IDs have shifted
 orgdb <- ah[["AH117535"]]
 
-cat("Loaded OrgDb for:", orgdb$species, "\n")
+print(orgdb)
 
 ##############################################################
 # STEP 2: Load your gene IDs (to restrict the gmt to genes in your data)
 ##############################################################
 
 master <- read.table("data/novogene/MasterFile_novogene_DEGs_2025.xls",
-                     header = TRUE, sep = "\t", check.names = FALSE)
+                     header = TRUE, sep = "\t", check.names = FALSE,
+                     quote = "", comment.char = "")   # see 02a: apostrophes otherwise drop genes
 
 your_gene_ids <- as.character(master$gene_id)
 
@@ -125,7 +126,7 @@ set.seed(SEED)
 interaction_res <- read.csv("results/02_DEGs/interaction_term_all_results_novogene.csv")
 
 # ---- Load the GO gene sets just built ----
-pathways <- gmtPathways("Cvirginica_GO.gmt")
+pathways <- gmtPathways("results/03_GSEA/Cvirginica_GO.gmt")
 
 cat("\nLoaded", length(pathways), "GO gene sets for fgsea\n")
 cat(nrow(interaction_res), "genes in interaction results\n")

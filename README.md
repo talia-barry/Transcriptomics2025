@@ -19,8 +19,9 @@ Groups: **TE**, **TC**, **UE**, **UC**. Comparisons are always named treated gro
 
 RNA extraction, library preparation, sequencing (Illumina, paired-end), quality control,
 read mapping to the NCBI *C. virginica* genome (C_virginica-3.0, 2017), gene counting,
-DESeq2 differential expression for the five pairwise comparisons, and GSEA were performed
-by Novogene Co., Ltd. These steps are not included as code here.
+DESeq2 differential expression and GSEA for the five pairwise comparisons were performed
+by Novogene Co., Ltd. These steps are not included as code here. The interaction-term
+DESeq2 model and its GSEA (preranked fgsea) were run by the author (`02a`, `03b`).
 
 All analyses below use Novogene's gene counts and results on the 2017 NCBI genome.
 DEGs are defined as padj < 0.05 and |log2 fold change| > 1.5.

@@ -25,7 +25,9 @@ library(DESeq2)
 # Adjust filename/path as needed.
 raw <- read.table("data/novogene/gene_count_novogene_2025.txt",
                   header = TRUE, sep = "\t", check.names = FALSE,
-                  row.names = "gene_id")
+                  row.names = "gene_id",
+                  quote = "", comment.char = "")   # apostrophes in gene descriptions (e.g. 5'-nucleotidase) otherwise drop ~2/3 of genes
+cat(nrow(raw), "genes read (expect 39529)\n")
 
 # ---- 2b. KEEP ONLY YOUR 16 SAMPLES (drop A/B/C/D groups + annotation columns) ----
 my_samples <- c("TC1","TC2","TC3","TC4",
@@ -93,8 +95,11 @@ sig_interaction <- subset(res_interaction, padj < 0.05 & abs(log2FoldChange) > 1
 cat("Number of genes with significant interaction effect:", nrow(sig_interaction), "\n")
 
 # ---- 12. SAVE RESULTS ----
-write.csv(as.data.frame(res_interaction), "results/02_DEGs/interaction_term_all_results_novogene.csv")
-write.csv(as.data.frame(sig_interaction), "results/02_DEGs/interaction_term_significant_DEGs_novogene.csv")
+# gene_id written as a named column, no quotes, so 02b, 02c and 03b all read it correctly
+write.csv(data.frame(gene_id = rownames(res_interaction), as.data.frame(res_interaction)),
+          "results/02_DEGs/interaction_term_all_results_novogene.csv", row.names = FALSE, quote = FALSE)
+write.csv(data.frame(gene_id = rownames(sig_interaction), as.data.frame(sig_interaction)),
+          "results/02_DEGs/interaction_term_significant_DEGs_novogene.csv", row.names = FALSE, quote = FALSE)
 
 cat("Done. Full results saved to interaction_term_all_results.csv\n")
 cat("Significant interaction DEGs saved to interaction_term_significant_DEGs.csv\n")
