@@ -4,9 +4,19 @@ Novogene files below are included, trimmed to the 16 samples in this study
 (TC, TE, UC, UE). Columns for unrelated samples sequenced in the same batch
 were removed; all values for the 16 samples are unchanged.
 
-The Zeng & Guo (2022) DEG table is **not** included. Download it from the
-supplementary material of that paper [add citation/link] and save it as
-`data/Guo2022/DEGs_Zeng_Guo_2022.txt`.
+The Zeng & Guo (2022) DEG table is **not** included, because it belongs to that
+publication. To run `05a_compare_Guo2022.R`, download it from the paper's
+electronic supplementary material:
+
+> Zeng, D. & Guo, X. (2022). Mantle transcriptome provides insights into
+> biomineralization and growth regulation in the eastern oyster
+> (*Crassostrea virginica*). *Marine Biotechnology* 24, 82–96.
+> https://doi.org/10.1007/s10126-021-10088-7
+
+Save the DEG table as tab-delimited text at `data/Guo2022/DEGs_Zeng_Guo_2022.txt`.
+The script skips the first (title) line and expects these columns:
+`Gene_ID`, `log2FoldChange`, `pvalue`, `padj`, `significant(LvsS)`,
+`NCBI annotation`, `Blast swiss prot`, `Potentially shell related`.
 
 Layout:
 

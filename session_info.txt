@@ -1,0 +1,120 @@
+
+> cat("Session info for Transcriptomics2025 analyses\n")
+Session info for Transcriptomics2025 analyses
+
+> cat("Recorded:", format(Sys.time(), "%Y-%m-%d"), "\n")
+Recorded: 2026-11-23 
+
+> if (requireNamespace("rstudioapi", quietly = TRUE) && rstudioapi::isAvailable())
++   cat("RStudio:", as.character(rstudioapi::versionInfo()$version) .... [TRUNCATED] 
+RStudio: 2026.11.0.203 
+
+> cat("\n## Package versions\n")
+
+## Package versions
+
+> print(versions, row.names = FALSE)
+         package version
+          DESeq2  1.46.0
+           WGCNA    1.74
+           fgsea  1.32.0
+           rrvgo  1.18.0
+ clusterProfiler  4.14.6
+   AnnotationHub  3.14.0
+   AnnotationDbi  1.68.0
+           GO.db  3.20.0
+    org.Hs.eg.db  3.20.0
+           dplyr   1.2.1
+           tidyr   1.3.2
+         stringr   1.6.0
+         ggplot2   4.0.3
+          ggpubr   1.0.0
+         ggrepel   0.9.8
+   ggVennDiagram   1.5.7
+       patchwork   1.3.2
+        pheatmap  1.0.13
+         treemap   2.4.4
+
+> cat("\n## Full sessionInfo()\n")
+
+## Full sessionInfo()
+
+> print(sessionInfo())
+R version 4.4.1 (2024-06-14)
+Platform: x86_64-apple-darwin20
+Running under: macOS 15.7.3
+
+Matrix products: default
+BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.4-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+time zone: Asia/Hong_Kong
+tzcode source: internal
+
+attached base packages:
+[1] stats4    stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+ [1] treemap_2.4-4               pheatmap_1.0.13             patchwork_1.3.2            
+ [4] ggVennDiagram_1.5.7         ggrepel_0.9.8               ggpubr_1.0.0               
+ [7] ggplot2_4.0.3               stringr_1.6.0               tidyr_1.3.2                
+[10] dplyr_1.2.1                 org.Hs.eg.db_3.20.0         GO.db_3.20.0               
+[13] AnnotationDbi_1.68.0        AnnotationHub_3.14.0        BiocFileCache_2.14.0       
+[16] dbplyr_2.5.1                clusterProfiler_4.14.6      rrvgo_1.18.0               
+[19] fgsea_1.32.0                WGCNA_1.74                  fastcluster_1.3.0          
+[22] dynamicTreeCut_1.63-1       DESeq2_1.46.0               SummarizedExperiment_1.36.0
+[25] Biobase_2.66.0              MatrixGenerics_1.18.1       matrixStats_1.5.0          
+[28] GenomicRanges_1.58.0        GenomeInfoDb_1.42.3         IRanges_2.40.1             
+[31] S4Vectors_0.44.0            BiocGenerics_0.52.0        
+
+loaded via a namespace (and not attached):
+  [1] splines_4.4.1           later_1.4.8             ggplotify_0.1.3        
+  [4] filelock_1.0.3          tibble_3.3.1            R.oo_1.27.1            
+  [7] preprocessCore_1.68.0   rpart_4.1.27            lifecycle_1.0.5        
+ [10] rstatix_1.0.0           doParallel_1.0.17       NLP_0.3-3              
+ [13] lattice_0.22-9          backports_1.5.1         magrittr_2.0.5         
+ [16] Hmisc_5.2-6             rmarkdown_2.31          yaml_2.3.12            
+ [19] httpuv_1.6.17           otel_0.2.0              ggtangle_0.1.2         
+ [22] askpass_1.2.1           reticulate_1.46.0       cowplot_1.2.0          
+ [25] DBI_1.3.0               RColorBrewer_1.1-3      abind_1.4-8            
+ [28] zlibbioc_1.52.0         purrr_1.2.2             R.utils_2.13.0         
+ [31] yulab.utils_0.2.4       nnet_7.3-20             rappdirs_0.3.4         
+ [34] GenomeInfoDbData_1.2.13 enrichplot_1.26.6       tm_0.7-18              
+ [37] tidytree_0.4.8          umap_0.2.10.0           RSpectra_0.16-2        
+ [40] codetools_0.2-20        DelayedArray_0.32.0     DOSE_4.0.1             
+ [43] xml2_1.6.0              tidyselect_1.2.1        aplot_0.3.1            
+ [46] UCSC.utils_1.2.0        farver_2.1.2            base64enc_0.1-6        
+ [49] jsonlite_2.0.0          Formula_1.2-5           survival_3.8-9         
+ [52] iterators_1.0.14        foreach_1.5.2           tools_4.4.1            
+ [55] treeio_1.30.0           Rcpp_1.1.2              glue_1.8.1             
+ [58] gridExtra_2.3.1         SparseArray_1.6.2       xfun_0.60              
+ [61] qvalue_2.38.0           withr_3.0.3             BiocManager_1.30.27    
+ [64] fastmap_1.2.0           openssl_2.4.2           digest_0.6.39          
+ [67] R6_2.6.1                mime_0.13               gridGraphics_0.5-1     
+ [70] colorspace_2.1-3        RSQLite_3.53.3          R.methodsS3_1.8.2      
+ [73] generics_0.1.4          data.table_1.18.4       httr_1.4.8             
+ [76] htmlwidgets_1.6.4       S4Arrays_1.6.0          pkgconfig_2.0.3        
+ [79] gtable_0.3.6            blob_1.3.0              S7_0.2.2               
+ [82] impute_1.80.0           XVector_0.46.0          htmltools_0.5.9        
+ [85] carData_3.0-6           scales_1.4.0            png_0.1-9              
+ [88] wordcloud_2.6           ggfun_0.2.1             knitr_1.51             
+ [91] rstudioapi_0.19.0       reshape2_1.4.5          checkmate_2.3.4        
+ [94] nlme_3.1-170            curl_7.1.0              cachem_1.1.0           
+ [97] BiocVersion_3.20.0      parallel_4.4.1          foreign_0.8-91         
+[100] pillar_1.11.1           grid_4.4.1              vctrs_0.7.3            
+[103] slam_0.1-56             promises_1.5.0          car_3.1-5              
+[106] xtable_1.8-8            cluster_2.1.8.2         htmlTable_2.5.0        
+[109] evaluate_1.0.5          cli_3.6.6               locfit_1.5-9.12        
+[112] compiler_4.4.1          rlang_1.3.0             crayon_1.5.3           
+[115] ggsignif_0.6.4          plyr_1.8.9              fs_2.1.0               
+[118] stringi_1.8.7           gridBase_0.4-7          BiocParallel_1.40.2    
+[121] Biostrings_2.74.1       lazyeval_0.2.3          GOSemSim_2.32.0        
+[124] Matrix_1.7-5            bit64_4.8.2             KEGGREST_1.46.0        
+[127] shiny_1.14.0            broom_1.0.13            igraph_2.3.3           
+[130] memoise_2.0.1           ggtree_3.14.0           fastmatch_1.1-8        
+[133] bit_4.6.0               ape_5.8-1               gson_0.2.0             
+
+> sink()

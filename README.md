@@ -60,6 +60,8 @@ Outputs are written to `results/` (created automatically).
 
 ## Software
 
+Exact R and package versions are recorded in [`session_info.txt`](session_info.txt) (made by `00_session_info.R`).
+
 R 4.5 with Bioconductor packages: DESeq2, WGCNA, fgsea, rrvgo, clusterProfiler,
 AnnotationHub, AnnotationDbi, GO.db, plus dplyr, stringr, ggplot2, ggpubr, ggrepel,
 ggVennDiagram, patchwork, treemap.
