@@ -17,11 +17,23 @@ Groups: **TE**, **TC**, **UE**, **UC**. Comparisons are always named treated gro
 
 ## Sequencing, mapping and differential expression (Novogene)
 
-RNA extraction, library preparation, sequencing (Illumina, paired-end), quality control,
+RNA extraction, library preparation, sequencing (Illumina, 150 bp paired-end), quality control,
 read mapping to the NCBI *C. virginica* genome (C_virginica-3.0, 2017), gene counting,
 DESeq2 differential expression and GSEA for the five pairwise comparisons were performed
 by Novogene Co., Ltd. These steps are not included as code here. The interaction-term
 DESeq2 model and its GSEA (preranked fgsea) were run by the author (`02a`, `03b`).
+
+Novogene pipeline (from Novogene's methods documentation):
+
+| Step | Tool (version) |
+|---|---|
+| Read cleaning, Q20/Q30/GC | fastp |
+| Genome index and alignment | HISAT2 (2.2.1) |
+| Transcript assembly | StringTie (2.2.3) |
+| Read counting | featureCounts (2.0.6) |
+| Pairwise differential expression | DESeq2 (1.42.0); Novogene's DEG cutoff padj ≤ 0.05 and \|log2FC\| ≥ 1 |
+| GO over-representation of DEGs | clusterProfiler (4.8.1) |
+| Pairwise GSEA | Broad GSEA software (local version), GO gene sets |
 
 All analyses below use Novogene's gene counts and results on the 2017 NCBI genome.
 DEGs are defined as padj < 0.05 and |log2 fold change| > 1.5.
@@ -70,6 +82,11 @@ ggVennDiagram, patchwork, treemap.
 ## Data availability
 
 Raw reads: NCBI SRA BioProject [ACCESSION – add when available].
+
+## License
+
+Code is released under the MIT License (see [`LICENSE`](LICENSE)). Data from Novogene and
+from Zeng & Guo (2022) remain subject to their original terms.
 
 ## Contact
 

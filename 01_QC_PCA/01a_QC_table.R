@@ -30,13 +30,14 @@ multiqc_clean <- multiqc %>%
   transmute(
     sample                     = sample,
     `Total mapped reads`       = extract_count(total_map),
+    `Total mapping rate (%)`   = extract_pct(total_map),
     `Uniquely mapped reads`    = extract_count(unique_map),
     `Uniquely mapping rate (%)`= extract_pct(unique_map)
   )
 
 qc_summary <- fastqc %>%
   select(sample, `Raw reads` = raw_reads, `Clean reads` = clean_reads,
-         `Q20 (%)` = Q20, `GC content (%)` = GC_pct) %>%
+         `Q20 (%)` = Q20, `Q30 (%)` = Q30, `GC content (%)` = GC_pct) %>%
   left_join(multiqc_clean, by = "sample")
 
 #--- remove the A-D samples
@@ -44,8 +45,9 @@ qc_summary <- qc_summary %>%
   filter(str_detect(sample, "^(TE|UE|TC|UC)"))
 
 # --- Transpose to match Table 1 layout (samples as columns, metrics as rows) ---
-metric_order <- c("Raw reads", "Clean reads", "Q20 (%)", "GC content (%)",
-                  "Total mapped reads", "Uniquely mapped reads", "Uniquely mapping rate (%)")
+metric_order <- c("Raw reads", "Clean reads", "Q20 (%)", "Q30 (%)", "GC content (%)",
+                  "Total mapped reads", "Total mapping rate (%)",
+                  "Uniquely mapped reads", "Uniquely mapping rate (%)")
 
 table1 <- qc_summary %>%
   pivot_longer(-sample, names_to = "Metric", values_to = "value") %>%

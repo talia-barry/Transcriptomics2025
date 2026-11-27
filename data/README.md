@@ -35,6 +35,8 @@ data/
 │   ├── QC/
 │   │   ├── FastQC_report_trans2025_novogene.xls
 │   │   └── MultiQC_report_trans2025_novogene.xls
+│   ├── GO_enrichment/                         # Novogene GO over-representation tests on their DEG lists
+│   │   └── TCvsUC / TEvsTC / TEvsUC / UEvsUC .all_GOenrich.xls  (no file was supplied for TEvsUE)
 │   └── GSEA/
 │       ├── TCvsUC/  gsea_report_for_TCvsUC_TC.tsv, gsea_report_for_TCvsUC_UC.tsv
 │       ├── TEvsTC/  gsea_report_for_TEvsTC_TE.tsv, gsea_report_for_TEvsTC_TC.tsv
