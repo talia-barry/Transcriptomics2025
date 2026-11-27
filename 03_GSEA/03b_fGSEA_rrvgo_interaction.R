@@ -35,7 +35,7 @@ print(query_result)
 
 # Should show one record - typically "AH96120" as of this writing,
 # but confirm from the printed list above in case IDs have shifted
-orgdb <- ah[["AH117535"]]
+orgdb <- ah[["AH119905"]]  # OrgDb for current Bioconductor (AH117535 was the Bioc 3.20 version)
 
 print(orgdb)
 

@@ -27,7 +27,7 @@ ah <- AnnotationHub()
 hits <- query(ah, c("Crassostrea virginica", "OrgDb"))
 hits   # inspect - note the AH#### ID for the OrgDb entry
 
-orgdb <- ah[["AH117535"]]   # <-- use with the actual ID from `hits` above
+orgdb <- ah[["AH119905"]]  # OrgDb for current Bioconductor (AH117535 was the Bioc 3.20 version)
 
 keytypes(orgdb)   # check what ID types this OrgDb supports (GID, ENTREZID, SYMBOL, etc.)
 
