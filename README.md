@@ -60,6 +60,7 @@ Scripts are numbered in the order they should be run.
 | `05_Guo2022_comparison` | `05a_compare_Guo2022.R` | Comparison with Zeng & Guo (2022) DEGs |
 
 Outputs are written to `results/` (created automatically).
+The paper's supplementary tables and figures are in [`supplementary/`](supplementary/).
 
 ## How to run
 

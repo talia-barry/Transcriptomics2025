@@ -61,7 +61,7 @@ load_gsea_report <- function(filepath) {
   df <- df[!is.na(df$GOID), ]
   
   # Keep just what we need
-  df <- df %>% select(GOID, `FDR q-val`, NES) %>%
+  df <- df %>% select(GOID, `FDR q-val`, NES, SIZE) %>%
     rename(fdr = `FDR q-val`)
   
   df
@@ -241,10 +241,15 @@ if (length(reduced_files) == 0) {
     if (!file.exists(report_path)) {
       cat("  Could not find original report for", fname, "- NES will be NA\n")
       reduced_df$NES <- NA
+      reduced_df$size <- NA
     } else {
       report <- load_gsea_report(report_path)
       nes_lookup <- setNames(report$NES, report$GOID)
       reduced_df$NES <- nes_lookup[reduced_df$go]
+      # FIX: rrvgo's "size" = number of HUMAN genes for the term (org.Hs.eg.db).
+      # Replace with the oyster gene-set SIZE from the Novogene GSEA report.
+      size_lookup <- setNames(report$SIZE, report$GOID)
+      reduced_df$size <- size_lookup[reduced_df$go]
     }
     
     reduced_df$comparison <- comp_name

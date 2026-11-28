@@ -35,9 +35,9 @@ print(query_result)
 
 # Should show one record - typically "AH96120" as of this writing,
 # but confirm from the printed list above in case IDs have shifted
-orgdb <- ah[["AH119905"]]  # OrgDb for current Bioconductor (AH117535 was the Bioc 3.20 version)
+orgdb <- ah[["AH119905"]]
 
-print(orgdb)
+print(orgdb)   # shows species and source; orgdb$species no longer works in newer AnnotationDbi
 
 ##############################################################
 # STEP 2: Load your gene IDs (to restrict the gmt to genes in your data)
@@ -218,6 +218,7 @@ cat(nrow(fgsea_sig), "significant gene sets loaded\n")
 go_ids <- fgsea_sig$pathway
 padj_values <- fgsea_sig$padj
 nes_values <- setNames(fgsea_sig$NES, fgsea_sig$pathway)
+size_values <- setNames(fgsea_sig$size, fgsea_sig$pathway)   # oyster gene-set size (fgsea)
 
 ontologies <- c("BP", "MF", "CC")
 
@@ -268,6 +269,10 @@ for (ont in ontologies) {
   # Attach real padj and NES values back in (not the abs(NES) score used for sizing)
   reducedTerms$padj <- padj_values[match(reducedTerms$go, go_ids)]
   reducedTerms$NES  <- nes_values[reducedTerms$go]
+  # FIX: rrvgo's own "size" column = number of HUMAN genes annotated to the
+  # term in org.Hs.eg.db (used only for semantic similarity). Replace it with
+  # the oyster gene-set size from fgsea.
+  reducedTerms$size <- size_values[reducedTerms$go]
   reducedTerms$ontology <- ont
   
   # Build a plot-only copy with the real (signed) NES appended to the label
