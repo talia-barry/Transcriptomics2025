@@ -13,7 +13,7 @@ electronic supplementary material:
 > (*Crassostrea virginica*). *Marine Biotechnology* 24, 82–96.
 > https://doi.org/10.1007/s10126-021-10088-7
 
-Save the DEG table as tab-delimited text at `data/Guo2022/DEGs_Zeng_Guo_2022.txt`.
+Save their **Table S2** ("Differentially expressed genes between large and small eastern oysters") as tab-delimited text at `data/Guo2022/DEGs_Zeng_Guo_2022.txt`.
 The script skips the first (title) line and expects these columns:
 `Gene_ID`, `log2FoldChange`, `pvalue`, `padj`, `significant(LvsS)`,
 `NCBI annotation`, `Blast swiss prot`, `Potentially shell related`.

@@ -104,11 +104,11 @@ make_volcano <- function(df, lfc_col, padj_col, title) {
 # STEP 3: Generate each of the 6 volcano plots
 ##############################################################
 
-p1 <- make_volcano(master, "UEvsUC_log2FoldChange", "UEvsUC_padj", "UC vs UE")
-p2 <- make_volcano(master, "TCvsUC_log2FoldChange", "TCvsUC_padj", "UC vs TC")
-p3 <- make_volcano(master, "TEvsTC_log2FoldChange", "TEvsTC_padj", "TC vs TE")
-p4 <- make_volcano(master, "TEvsUC_log2FoldChange", "TEvsUC_padj", "UC vs TE")
-p5 <- make_volcano(master, "TEvsUE_log2FoldChange", "TEvsUE_padj", "UE vs TE")
+p1 <- make_volcano(master, "UEvsUC_log2FoldChange", "UEvsUC_padj", "UE vs UC")
+p2 <- make_volcano(master, "TCvsUC_log2FoldChange", "TCvsUC_padj", "TC vs UC")
+p3 <- make_volcano(master, "TEvsTC_log2FoldChange", "TEvsTC_padj", "TE vs TC")
+p4 <- make_volcano(master, "TEvsUC_log2FoldChange", "TEvsUC_padj", "TE vs UC")
+p5 <- make_volcano(master, "TEvsUE_log2FoldChange", "TEvsUE_padj", "TE vs UE")
 p6 <- make_volcano(interaction_res, "log2FoldChange", "padj", "Interaction")
 
 #View the plots in R studio First

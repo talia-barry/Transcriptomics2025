@@ -51,11 +51,11 @@ master$gene_id <- rownames(master)
 # Positive log2FC = higher in the more-exposed group (confirmed convention)
 
 comparisons <- list(
-  "UC vs UE" = "UEvsUC",   # positive = higher in UE
-  "UC vs TC" = "TCvsUC",   # positive = higher in TC
-  "TC vs TE" = "TEvsTC",   # positive = higher in TE
-  "UE vs TE" = "TEvsUE",   # positive = higher in TE
-  "UC vs TE" = "TEvsUC"    # positivie = higher in TE
+  "UE vs UC" = "UEvsUC",   # positive = higher in UE
+  "TC vs UC" = "TCvsUC",   # positive = higher in TC
+  "TE vs TC" = "TEvsTC",   # positive = higher in TE
+  "TE vs UE" = "TEvsUE",   # positive = higher in TE
+  "TE vs UC" = "TEvsUC"    # positive = higher in TE
 )
 
 ##############################################################

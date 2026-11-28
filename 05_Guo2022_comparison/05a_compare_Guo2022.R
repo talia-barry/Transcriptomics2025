@@ -77,11 +77,11 @@ master$gene_id <- as.character(master$gene_id)
 ##############################################################
 
 comparisons <- list(
-  "UC_vs_UE" = "UEvsUC",
-  "UC_vs_TC" = "TCvsUC",
-  "TC_vs_TE" = "TEvsTC",
-  "UC_vs_TE" = "TEvsUC",
-  "UE_vs_TE" = "TEvsUE"
+  "UE_vs_UC" = "UEvsUC",
+  "TC_vs_UC" = "TCvsUC",
+  "TE_vs_TC" = "TEvsTC",
+  "TE_vs_UC" = "TEvsUC",
+  "TE_vs_UE" = "TEvsUE"
 )
 
 ##############################################################
@@ -327,7 +327,7 @@ cat("Saved shell_genes_heatmap.png/.pdf\n")
 ##############################################################
 # STEP 10c: Scatter plots
 ##############################################################
-# Generated for UC vs TC, UC vs UE, and TC vs TE (selection rationale
+# Generated for TC vs UC, UE vs UC, and TE vs TC (selection rationale
 # established from prior regression/binomial results - re-check after
 # this fix in case the strongest comparisons have shifted)
 
@@ -344,7 +344,7 @@ make_scatter_plot <- function(data, comp_col, comp_label, filename_prefix) {
     geom_vline(xintercept = 0, linetype = "dashed", color = "grey50") +
     scale_color_manual(values = c("Other" = "grey60", "Shell-related" = "#B2182B")) +
     labs(title = paste0(comp_label, " log2FC vs. Guo et al. (2022) log2FC"),
-         x = "Guo et al. 2022 log2FC (L vs S)", y = paste0("Your log2FC (", comp_label, ")"),
+         x = "Guo et al. 2022 log2FC (L vs S)", y = paste0("log2FC (", comp_label, ")"),
          color = "") +
     theme_bw(base_size = 12) +
     theme(plot.title = element_text(face = "bold", hjust = 0.5))
@@ -357,13 +357,13 @@ make_scatter_plot <- function(data, comp_col, comp_label, filename_prefix) {
   p
 }
 
-scatter_UC_vs_TC <- make_scatter_plot(scatter_data, "UC_vs_TC_log2FC", "UC vs TC", "UCvsTC")
-scatter_UC_vs_UE <- make_scatter_plot(scatter_data, "UC_vs_UE_log2FC", "UC vs UE", "UCvsUE")
-scatter_TC_vs_TE <- make_scatter_plot(scatter_data, "TC_vs_TE_log2FC", "TC vs TE", "TCvsTE")
+scatter_TC_vs_UC <- make_scatter_plot(scatter_data, "TC_vs_UC_log2FC", "TC vs UC", "TCvsUC")
+scatter_UE_vs_UC <- make_scatter_plot(scatter_data, "UE_vs_UC_log2FC", "UE vs UC", "UEvsUC")
+scatter_TE_vs_TC <- make_scatter_plot(scatter_data, "TE_vs_TC_log2FC", "TE vs TC", "TEvsTC")
 
-scatter_TC_vs_TE
-scatter_UC_vs_TC
-scatter_UC_vs_UE
+scatter_TE_vs_TC
+scatter_TC_vs_UC
+scatter_UE_vs_UC
 
 cat("\nAll figures saved to:", fig_dir, "\n")
 
@@ -410,8 +410,8 @@ make_regression_plot <- function(data, comp_labels, title_label, filename_prefix
     geom_text(data = stats_data, aes(x = x_pos, y = y_pos, label = label),
               hjust = 0, vjust = 1, size = 3, fontface = "italic") +
     facet_wrap(~ comparison, scales = "free") +
-    labs(title = paste0(title_label, ": Guo et al. (2022) log2FC vs. Your log2FC"),
-         x = "Guo et al. 2022 log2FC (L vs S)", y = "Your log2FC") +
+    labs(title = paste0(title_label, ": Guo et al. (2022) log2FC vs. log2FC"),
+         x = "Guo et al. 2022 log2FC (L vs S)", y = "log2FC") +
     theme_bw(base_size = 11) +
     theme(plot.title = element_text(face = "bold", hjust = 0.5))
   
